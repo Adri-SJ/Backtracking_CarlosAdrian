@@ -26,15 +26,16 @@ app = FastAPI(title="Microservicio Coloreo Mapas con Backtracking")
 # permitir peticiones desde el front (Vite en localhost)
 origenes_permitidos = [
     "http://localhost:5173",
-    "http://127.0.0.1:5173",
+    "https://backtracking-carlos-adrian-5vj4.vercel.app",
+
 ]
 
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origenes_permitidos,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["*"],   # GET, POST, OPTIONS, etc.
+    allow_headers=["*"],   # Authorization, Content-Type, etc.
 )
 
 
